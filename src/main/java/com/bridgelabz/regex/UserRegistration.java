@@ -23,6 +23,17 @@ public class UserRegistration {
         String fail = "No match found, Please Enter correct validations for Email...";
         return fail;
     }
+
+    public String mobileNumber(String mobNumber){
+        String regex = "^[0-9]{2}[/-]{1}[0-9]{10}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(mobNumber);
+        if(matcher.matches()){
+            return mobNumber;
+        }
+        String fail = "No match found, Please Enter correct validations for Mobile number...";
+        return fail;
+    }
         public static void main(String[] args) {
             System.out.println("WELCOME TO USER REGISTRATION PROGRAM USING REGEX");
             Scanner scan = new Scanner(System.in);
@@ -45,6 +56,12 @@ public class UserRegistration {
             emailId = scan.next();
             String email = obj.email(emailId);
             System.out.println("Email Id is :- "+email);
+
+            String mobNumber;
+            System.out.println("Enter mobile number country code follow by space an 10 digit number");
+            mobNumber = scan.next();
+            String number = obj.mobileNumber(mobNumber);
+            System.out.println("Mobile Number is:- "+number);
         }
     }
 
