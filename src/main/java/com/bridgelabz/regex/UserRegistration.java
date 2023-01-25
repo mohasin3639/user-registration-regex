@@ -17,11 +17,18 @@ public class UserRegistration {
             System.out.println("WELCOME TO USER REGISTRATION PROGRAM USING REGEX");
             Scanner scan = new Scanner(System.in);
             UserRegistration obj = new UserRegistration();
-            String name;
+
+            String firstName;
             System.out.println("Enter the first name, Start with capital letter and has min 3 letter :-");
-            name = scan.next();
-            String res = obj.FirstName(name);
+            firstName = scan.next();
+            String res = obj.FirstName("First Name is:-" +firstName);
             System.out.println(res);
+
+            String lastName;
+            System.out.println("Enter the last name, Start with capital letter and has min 3 letter :-");
+            lastName = scan.next();
+            String lastname = obj.FirstName(lastName);
+            System.out.println("Last Name is:- "+lastName);
         }
     }
 
